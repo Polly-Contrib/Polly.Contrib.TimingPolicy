@@ -22,7 +22,6 @@ namespace Polly.Contrib.TimingPolicy
         }
 
         private AsyncTimingPolicy(Func<TimeSpan, Context, Task> timingPublisher)
-            : base(ExceptionPredicates.None)
         {
             this.timingPublisher = timingPublisher ?? throw new ArgumentNullException(nameof(timingPublisher));
         }

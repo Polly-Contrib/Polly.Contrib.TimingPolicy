@@ -22,7 +22,6 @@ namespace Polly.Contrib.TimingPolicy
         }
 
         private TimingPolicy(Action<TimeSpan, Context> timingPublisher)
-            : base(ExceptionPredicates.None, ResultPredicates<TResult>.None)
         {
             this.timingPublisher = timingPublisher ?? throw new ArgumentNullException(nameof(timingPublisher));
         }
